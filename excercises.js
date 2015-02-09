@@ -6,16 +6,32 @@
 // Define a function max() that takes two numbers as arguments and returns the largest of them. Use the if-then-else construct available in JavaScript.
 // ---------------------
 
-function max(){
-    //...
+
+
+function max(n1, n2) {
+if (n1 < n2) {
+  return n2;
+  }
+  else 
+  {
+    return n1;
+  }
 }
 
 // ---------------------
 // Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.
 // ---------------------
 
-function maxOfThree(){
-    //...
+function maxOfThree(n1, n2, n3){
+  if(n1 > n2 && n1 > n3) {
+    return n1;
+  }
+  else if(n2 > n1 && n2 > n3) {
+    return n2;
+  }
+  else {
+    return n3;
+  }
 }
 
 // ---------------------
@@ -23,21 +39,36 @@ function maxOfThree(){
 // ---------------------
 
 function isVowel(char){
-    //...
+
+  var vowels;
+  vowels = "aeiou".split("");
+  var vowelarray = vowels.filter(function(item) {
+    return item === char();
+    });
+    return !!(vowelarray.length);
 }
 
 // ---------------------
 // Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
 // ---------------------
 
-function sum(){
-    //...
+
+function sum(nums) {
+  var totNums = nums.reduce(function(firstNumber, secondNumber) {
+    return firstNumber + secondNumber;
+  });
+
+  return totNums;
 }
 
-function multiply(){
-    //...
-}
 
+function multiply(nums){
+  var totNums = nums.reduce(function(firstNumber, secondNumber) {
+    return firstNumber * secondNumber;
+  });
+
+  return totNums;
+}
 // ---------------------
 // Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj".
 // ---------------------
@@ -51,7 +82,16 @@ function reverse(){
 // ---------------------
 
 function findLongestWord(words){
-    //...
+    var str = string.split(" ");
+    var longest = 0;
+    var word = null;
+    str.forEach(function(str) {
+        if (longest < str.length) {
+            longest = str.length;
+            word = str;
+        }
+    });
+    return word;
 }
 
 // ---------------------
