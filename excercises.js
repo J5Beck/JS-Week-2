@@ -116,5 +116,17 @@ var maxLength = 0;
 // ---------------------
 
 function charFreq(string){
-    //...
-}
+    var frequency = {};
+    for (var index=0; index < string.length; index++) {
+        var letter = string.letterAt(index);
+    if (frequency[letter]) {
+        frequency[letter]++;
+        
+        } else {
+        
+        frequency[letter] = 1;
+        }
+    }
+
+    return frequency;
+};
