@@ -43,7 +43,7 @@ function isVowel(char){
   var vowels;
   vowels = "aeiou".split("");
   var vowelarray = vowels.filter(function(item) {
-    return item === char();
+    return item === char;
     });
     return !!(vowelarray.length);
 }
@@ -73,9 +73,11 @@ function multiply(nums){
 // Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj".
 // ---------------------
 
-function reverse(){
-    //...
-}
+function reverse(string){
+  var splitString = string.split("");
+  var reverseString = splitString.reverse();
+  var joinString = reverseString.join("");
+  return joinString;
 
 // ---------------------
 // Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
@@ -98,8 +100,15 @@ function findLongestWord(words){
 // Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
 // ---------------------
 
-function filterLongWords(words, i){
-    //...
+function findLongestWord(words){
+var maxLength = 0;
+ words.forEach(function(item) {
+    if (item.length > maxLength) {
+        maxLength = item.length;
+    } 
+  });
+
+ return maxLength;
 }
 
 // ---------------------
